@@ -1,0 +1,103 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8 abr 2022, 17:47:10
+    Author     : Pau Fandos Gorris
+*/
+
+
+@font-face{
+  font-family: 'Lato';
+  font-weight: 100;
+  src: url('../fonts/Lato-Regular.ttf') format('truetype');
+}
+
+
+@font-face{
+  font-family: 'Lato';
+  font-weight: 700;
+  src: url('../fonts/Lato-Bold.ttf') format('truetype');
+}
+
+*{
+    -fx-font-family: 'Lato', Roboto;
+    -fx-font-weight: normal;
+    -fx-text-fill: black;
+}
+
+.fondo{
+    -fx-background-color: rgba(5, 81, 99, 0.15);
+}
+
+.tituloPrincipal{
+    -fx-font-size: 50px;
+    -fx-text-fill: #087b97;
+    -fx-font-family: 'Lato Bold';
+    -fx-effect: dropshadow(three-pass-box, #055163, 0, 0, 3.5, -3.5);
+}
+
+.saldo{
+    -fx-font-size: 35px;
+    -fx-alignment: center;
+}
+
+.infoCuentaTituloPrincipal{
+    -fx-font-size: 25px;
+    -fx-text-fill: #087b97;
+    -fx-text-fill: #055163;
+}
+
+
+.infoCuentaTituloSecundario{
+    -fx-font-size: 20px;
+    -fx-text-fill: #087b97;
+}
+
+.infoCuenta{
+    -fx-font-size: 15px;
+}
+
+.ubicacion{
+    -fx-font-size: 15px;
+    -fx-text-fill: #087b97;
+    -fx-font-family: 'Lato Bold';
+    -fx-font-weight: 700;
+}
+
+.titulosSecundario{
+    -fx-font-size: 20px;
+    -fx-text-fill: #087b97;
+    -fx-text-fill: #055163;
+}
+
+.titulosSecundarioPlus{
+    -fx-font-size: 17px;
+    -fx-text-fill: #087b97;
+    -fx-text-fill: #055163;
+}
+
+#texto{
+    -fx-font-size: 13px;
+}
+
+.subtexto{
+    -fx-font-size: 10px;
+    -fx-font-style: italic;
+    -fx-text-fill: #087b97;
+}
+
+.botones{
+    -fx-border-radius: 12px;
+    -fx-background-color: #087b97;
+    -fx-text-fill: white;
+    -fx-transition: all ease 100ms;
+    -fx-effect: dropshadow(three-pass-box, #055163, 0, 0, 0, 6);
+}
+
+.botones:pressed{
+    -fx-translate-y: 2;
+    -fx-effect: dropshadow(three-pass-box, #055163, 0, 0, 0, 4);
+}

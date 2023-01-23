@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" styleClass="fondo" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.paujoseluis.gestionbancaria.SecondaryController">
+   <children>
+      <Pane prefHeight="143.0" prefWidth="1024.0">
+         <children>
+            <ImageView fitHeight="132.0" fitWidth="131.0" layoutX="42.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="53.0" fitWidth="46.0" layoutX="952.0" layoutY="27.0" onMouseClicked="#switchToPrimary" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/cerrar.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="795.0" layoutY="122.0" styleClass="ubicacion" text="MISLATA, " textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="fechaActual" layoutX="868.0" layoutY="119.0" prefHeight="25.0" prefWidth="88.0" styleClass="ubicacion" text="-----" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label layoutX="219.0" layoutY="37.0" styleClass="tituloPrincipal" text="BANCO DE MISLATA" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="146.0" prefHeight="123.0" prefWidth="988.0">
+         <children>
+            <Label layoutX="182.0" layoutY="45.0" prefHeight="38.0" prefWidth="175.0" styleClass="infoCuentaTituloSecundario" text="Nº de cuenta:" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="182.0" layoutY="80.0" styleClass="infoCuentaTituloSecundario" text="Titular" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="numCuenta" layoutX="344.0" layoutY="51.0" prefHeight="27.0" prefWidth="216.0" styleClass="infoCuenta" text="------------------" textFill="GREEN">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="titularCuenta" layoutX="343.0" layoutY="80.0" prefHeight="30.0" prefWidth="205.0" styleClass="infoCuenta" text="------------------" textFill="GREEN">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="46.0" prefWidth="197.0" style="-fx-text-fill: #055163;" styleClass="infoCuentaTituloPrincipal" text="INFORMACIÓN" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="738.0" layoutY="36.0" />
+            <Label fx:id="saldo" alignment="CENTER_RIGHT" layoutX="599.0" layoutY="31.0" prefHeight="67.0" prefWidth="357.0" styleClass="saldo" text="0,00 €" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="256.0">
+         <children>
+            <Button fx:id="botonIngresar" layoutX="17.0" layoutY="161.0" mnemonicParsing="false" onAction="#ingresar" prefHeight="25.0" prefWidth="224.0" styleClass="botones" stylesheets="@css/estilos.css" text="INGRESAR" />
+            <Spinner fx:id="cantidadIngresar" editable="true" layoutX="84.0" layoutY="76.0" prefHeight="25.0" prefWidth="157.0" />
+            <ChoiceBox fx:id="motivoIngreso" layoutX="83.0" layoutY="113.0" prefHeight="25.0" prefWidth="157.0" />
+            <Label id="texto" layoutX="9.0" layoutY="79.0" stylesheets="@css/estilos.css" text="CANTIDAD" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="texto" layoutX="20.0" layoutY="116.0" stylesheets="@css/estilos.css" text="MOTIVO" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutY="8.0" style="-fx-text-fill: #055163;" styleClass="titulosSecundario" stylesheets="@css/estilos.css" text="INGRESAR" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="484.0" prefHeight="272.0" prefWidth="256.0">
+         <children>
+            <Button fx:id="botonRetirar" layoutX="14.0" layoutY="226.0" mnemonicParsing="false" onAction="#retirar" prefHeight="25.0" prefWidth="216.0" styleClass="botones" stylesheets="@css/estilos.css" text="RETIRAR" />
+            <Spinner fx:id="cantidadRetirar" editable="true" layoutX="86.0" layoutY="60.0" prefHeight="25.0" prefWidth="157.0" />
+            <ChoiceBox fx:id="motivoRetirada" layoutX="85.0" layoutY="96.0" prefHeight="25.0" prefWidth="157.0" />
+            <ProgressBar fx:id="barraDonacionONG" layoutX="14.0" layoutY="165.0" prefHeight="18.0" prefWidth="224.0" progress="0.0" style="-fx-progress-color: #087b97;" />
+            <CheckBox fx:id="casillaDonacion" layoutX="147.0" layoutY="136.0" mnemonicParsing="false" text="Donación 5%" textFill="#087b97">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></CheckBox>
+            <Label layoutX="15.0" layoutY="195.0" text="Total Donado" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label id="texto" layoutX="10.0" layoutY="62.0" stylesheets="@css/estilos.css" text="CANTIDAD" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="texto" layoutX="23.0" layoutY="98.0" stylesheets="@css/estilos.css" text="MOTIVO" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="138.0" text="¿Deseas donar a una ONG?" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="cantidadDonada" layoutX="106.0" layoutY="195.0" text="0,00 €" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutY="14.0" style="-fx-text-fill: #055163;" styleClass="titulosSecundario" stylesheets="@css/estilos.css" text="RETIRAR" textFill="#087b97">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="327.0" layoutY="351.0" prefHeight="393.0" prefWidth="650.0" />
+      <TabPane layoutX="335.0" layoutY="279.0" prefHeight="465.0" prefWidth="675.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="MOVIMIENTOS">
+               <content>
+                  <AnchorPane prefHeight="455.0" prefWidth="634.0">
+                     <children>
+                        <TextArea fx:id="historialMovimientos" editable="false" layoutX="244.0" layoutY="75.0" prefHeight="382.0" prefWidth="634.0" style="-fx-font-family: Consolas; -fx-font-size: 14px;" AnchorPane.bottomAnchor="-20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0" />
+                        <Label layoutY="28.0" prefHeight="30.0" prefWidth="292.0" style="-fx-text-fill: #055163;" styleClass="titulosSecundario" text="HISTORIAL DE MOVIMIENTOS" textFill="#087b97" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="328.0" AnchorPane.topAnchor="28.0">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="4.0" layoutY="4.0" style="-fx-text-fill: #087b97;" styleClass="subtexto" text="Selecciona una de las pestañas si deseas realizar otra operacion" textFill="#087b97">
+                           <font>
+                              <Font name="System Italic" size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="botonlimpiar" layoutX="404.0" layoutY="30.0" mnemonicParsing="false" onAction="#limpiarMovimientos" prefHeight="25.0" prefWidth="216.0" styleClass="botones" stylesheets="@css/estilos.css" text="LIMPIAR HISTORIAL" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="AUTORIZADOS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="436.0" prefWidth="684.0">
+                     <children>
+                        <ProgressIndicator fx:id="progresoAutorizados" layoutX="162.0" layoutY="29.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="88.0" progress="0.0" style="-fx-progress-color: #087b97;" />
+                        <Label layoutX="4.0" layoutY="95.0" style="-fx-text-fill: #055163;" styleClass="titulosSecundarioPlus" stylesheets="@css/estilos.css" text="AUTORIZA PERSONAS A TU CUENTA" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="nombreAutorizado" layoutX="94.0" layoutY="135.0" prefHeight="26.0" prefWidth="157.0" />
+                        <TextField fx:id="nifAutorizado" layoutX="94.0" layoutY="170.0" prefHeight="26.0" prefWidth="157.0" />
+                        <Button fx:id="botonAutorizar" layoutX="36.0" layoutY="218.0" mnemonicParsing="false" onAction="#autorizar" prefHeight="25.0" prefWidth="216.0" styleClass="botones" stylesheets="@css/estilos.css" text="AUTORIZAR" />
+                        <TextField fx:id="nifAutorizadoEliminar" layoutX="94.0" layoutY="317.0" prefHeight="26.0" prefWidth="157.0" />
+                        <Button fx:id="botonEliminar" layoutX="36.0" layoutY="366.0" mnemonicParsing="false" onAction="#desautorizar" prefHeight="25.0" prefWidth="216.0" styleClass="botones" stylesheets="@css/estilos.css" text="ELIMINAR" />
+                        <Label layoutX="4.0" layoutY="41.0" style="-fx-text-fill: #055163;" styleClass="titulosSecundario" stylesheets="@css/estilos.css" text="AUTORIZADOS" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" alignment="CENTER_RIGHT" layoutX="26.0" layoutY="140.0" text="NOMBRE" textAlignment="RIGHT" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" alignment="CENTER_RIGHT" layoutX="16.0" layoutY="321.0" prefHeight="18.0" prefWidth="62.0" text="NIF" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="7.0" layoutY="279.0" style="-fx-text-fill: #055163;" styleClass="titulosSecundarioPlus" stylesheets="@css/estilos.css" text="ELIMINA PERSONAS DE TU CUENTA" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="17.0" layoutY="174.0" prefHeight="18.0" prefWidth="62.0" text="NIF" textAlignment="RIGHT" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="4.0" layoutY="4.0" styleClass="subtexto" text="Selecciona una de las pestañas si deseas realizar otra operacion" textFill="#087b97">
+                           <font>
+                              <Font name="System Italic" size="10.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="listaAutorizados" layoutX="307.0" layoutY="71.0" prefHeight="272.0" prefWidth="347.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="RECIBOS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="cif" layoutX="108.0" layoutY="91.0" />
+                        <TextField fx:id="nombreEmpresa" layoutX="108.0" layoutY="133.0" />
+                        <TextField fx:id="conceptoRecibo" layoutX="108.0" layoutY="222.0" />
+                        <Spinner fx:id="importeRecibo" editable="true" layoutX="108.0" layoutY="177.0" />
+                        <RadioButton id="texto" fx:id="rb_mensual" layoutX="120.0" layoutY="269.0" mnemonicParsing="false" styleClass="texto" stylesheets="@css/estilos.css" text="Mensual">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="periodicidad" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton id="texto" fx:id="rb_trimestral" layoutX="120.0" layoutY="298.0" mnemonicParsing="false" styleClass="texto" stylesheets="@css/estilos.css" text="Trimestral" toggleGroup="$periodicidad" />
+                        <RadioButton id="texto" fx:id="rb_anual" layoutX="120.0" layoutY="326.0" mnemonicParsing="false" styleClass="texto" stylesheets="@css/estilos.css" text="Anual" toggleGroup="$periodicidad" />
+                        <Button fx:id="botonDomiciliar" layoutX="30.0" layoutY="375.0" mnemonicParsing="false" onAction="#domiciliar" prefHeight="26.0" prefWidth="238.0" styleClass="botones" stylesheets="@css/estilos.css" text="DOMICILIAR" />
+                        <ListView fx:id="listaRecibos" layoutX="284.0" layoutY="63.0" prefHeight="272.0" prefWidth="347.0" />
+                        <Button fx:id="botonFiltrar" layoutX="348.0" layoutY="375.0" mnemonicParsing="false" onAction="#filtrar" prefHeight="26.0" prefWidth="240.0" styleClass="botones" stylesheets="@css/estilos.css" text="FILTRAR" />
+                        <Label layoutX="3.0" layoutY="33.0" style="-fx-text-fill: #055163;" styleClass="titulosSecundario" stylesheets="@css/estilos.css" text="DOMICILIACIÓN DE RECIBOS" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" layoutX="19.0" layoutY="92.0" stylesheets="@css/estilos.css" text="CIF EMPRESA" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" layoutX="39.0" layoutY="134.0" stylesheets="@css/estilos.css" text="EMPRESA" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" layoutX="41.0" layoutY="178.0" stylesheets="@css/estilos.css" text="IMPORTE" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" layoutX="32.0" layoutY="223.0" stylesheets="@css/estilos.css" text="CONCEPTO" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" layoutX="10.0" layoutY="262.0" stylesheets="@css/estilos.css" text="PERIODICIDAD" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="4.0" layoutY="4.0" styleClass="subtexto" text="Selecciona una de las pestañas si deseas realizar otra operacion" textFill="#087b97">
+                           <font>
+                              <Font name="System Italic" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="CUENTAS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="nCuentaNuevo" layoutX="108.0" layoutY="128.0" />
+                        <TextField fx:id="titularNuevo" layoutX="108.0" layoutY="170.0" />
+                        <TextField fx:id="nifNuevo" layoutX="105.0" layoutY="211.0" />
+                        <Button layoutX="23.0" layoutY="276.0" mnemonicParsing="false" onAction="#crearCuenta" prefHeight="26.0" prefWidth="238.0" styleClass="botones" stylesheets="@css/estilos.css" text="CREAR CUENTA" />
+                        <ListView fx:id="listaCuentas" layoutX="284.0" layoutY="63.0" prefHeight="272.0" prefWidth="347.0" />
+                        <Label layoutX="4.0" layoutY="33.0" styleClass="titulosSecundario" stylesheets="@css/estilos.css" text="CUENTAS" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" layoutX="19.0" layoutY="129.0" stylesheets="@css/estilos.css" text="Nº CUENTA" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" layoutX="39.0" layoutY="171.0" stylesheets="@css/estilos.css" text="TITULAR" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label id="texto" layoutX="68.0" layoutY="214.0" stylesheets="@css/estilos.css" text="NIF" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="4.0" layoutY="4.0" styleClass="subtexto" text="Selecciona una de las pestañas si deseas realizar otra operacion" textFill="#087b97">
+                           <font>
+                              <Font name="System Italic" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="6.0" layoutY="74.0" styleClass="titulosSecundarioPlus" stylesheets="@css/estilos.css" text="CREA UNA NUEVA CUENTA" textFill="#087b97">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
